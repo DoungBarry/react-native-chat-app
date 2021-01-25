@@ -1,33 +1,72 @@
-import React from 'react'
+import React, { useState } from 'react'
 import { Image, Button, Input } from "react-native-elements";
-import {  StyleSheet, Text, View } from "react-native";
+import {  KeyboardAvoidingView, StyleSheet, Text, View } from "react-native";
 
-const LoginScreen = () => {
+const LoginScreen = () => { 
+
+  const [email, setEmail ] = useState("") ;
+
+  const [password, setPassword]=useState("");
+     
+
+  
+  //tell your input this is useState ! // 
+
+
   return (
+    
     <View >
+      <KeyboardAvoidingView behavior="padding" enabled style={Styles.container}>
       <Image
-        style={{ width: 300, height: 300 }}
-        source={{ uri: "https://www.barrysjewellers.com/skin/frontend/boilerplate/barrys/images/logo-2020.jpg" }}
+        style={{ width: 200, height: 200 }}
+        source={{ uri: "/Users/doung1118/Code/ReactNative/message-chat-native/assets/logo/logo.png" }}
       />
      
  
       <Input
         placeholder="Email"
-        autoFocus
+          autoFocus
+          type="email"  
+          value={email}
         value={email}
-        onChangeText={ (text => setEmail(text))}
-        value={email}
-        type="email"  
-        /> 
-      
-         </View>
+        onChangeText={ (text) => setEmail(text)}
+ 
+        
+      /> 
+        
+      {/* set email and setEmail of Variable  */}
+
+
+    <Input
+        placeholder="Password"
+          secureTextEntry
+          type="email"  
+        value={password}
+        onChangeText={ (text )=> setPassword(text)}
+        value={password}
+     
+      /> 
+    
+      <Button containerStyle={Styles.button} title="Touch me " />
+
+        <Button containerStyle={Styles.button} title="Register" type="outline " />
+        </KeyboardAvoidingView>
+   </View>
   )
 }
 
 export default LoginScreen 
 
-const Styles = StyleSheet.create({
+const Styles = StyleSheet.create({  
+  container: {
+    flex:0,
+    alignItems:"center" ,
+  },
 
-  
+  button: {
+    width: 200,
+    marginTop:10 , 
+   }
+   
 })
 
