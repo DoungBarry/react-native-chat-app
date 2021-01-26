@@ -4,7 +4,6 @@ import { KeyboardAvoidingView, StyleSheet, Text, View, Keyboard } from "react-na
 
 import { StatusBar } from "expo-status-bar";
 
-// Join keyboarAvoidingview is keyboard show below , when you click screen //
 
 const LoginScreen = () => {
 
@@ -19,8 +18,9 @@ const LoginScreen = () => {
 
 
   return (
-    
-    <KeyboardAvoidingView behavior="padding"  style={styles.container}>
+ 
+    <KeyboardAvoidingView behavior="padding:30" style={ styles.container } >
+   
 
       <StatusBar style="light" />
       
@@ -31,13 +31,12 @@ const LoginScreen = () => {
       />
 
 
-      <View style={styles.inputContainer}>
+  <View style={styles.inputContainer}>
 
       <Input 
         placeholder="Email"
-          autoFocus
-          type="email"  
-          value={email}
+        // autoFocus
+        type="email"  
         value={email}
         onChangeText={ (text) => setEmail(text)}  
       /> 
@@ -45,13 +44,13 @@ const LoginScreen = () => {
       {/* set email and setEmail of Variable  */}
     <Input
         placeholder="Password"
-          secureTextEntry
-          type="email"  
+        secureTextEntry
+        type="email"  
         value={password}
         onChangeText={ (text )=> setPassword(text)}
         /> 
-             
-         </View>
+    </View>
+
       <Button
         onPress={signIn}
         containerStyle={styles.button}
@@ -61,28 +60,28 @@ const LoginScreen = () => {
           containerStyle={styles.button} 
           type="outline"
           title="Register" />
-      
-          {/* <KeyboardAvoidingView behavior="padding" enabled style={Styles.container}>
-      </KeyboardAvoidingView> */}
-      <View style={{height:100}} />
+        <View style={{ height: 300 }} />
 
-    </KeyboardAvoidingView>
+               
+      </KeyboardAvoidingView>
+
   )
 }
 
 export default LoginScreen 
 
 const styles = StyleSheet.create({  
+
   container: {
     flex:1,
     alignItems: "center",
     // justify-content: "",
     alignItems: "center",
-    padding: 10, 
+    padding: 25, 
     backgroundColor: "white"
+
     
   },
-
 
   inputContainer: {
     width :200 ,
