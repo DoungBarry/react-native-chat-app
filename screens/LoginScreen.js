@@ -11,7 +11,6 @@ const LoginScreen = () => {
   const [email, setEmail] = useState("");
 
   const [password, setPassword] = useState("");
-     
 
 
   //tell your input this is useState ! // 
@@ -32,8 +31,6 @@ const LoginScreen = () => {
       />
 
 
-
-
       <View style={styles.inputContainer}>
 
       <Input 
@@ -52,15 +49,23 @@ const LoginScreen = () => {
           type="email"  
         value={password}
         onChangeText={ (text )=> setPassword(text)}
-      /> 
-
-      <Button containerStyle={styles.button} title="V-up" />
-
-      <Button containerStyle={styles.button} title="Register" type="outline " />
+        /> 
+             
+         </View>
+      <Button
+        onPress={signIn}
+        containerStyle={styles.button}
+        title="V-up" />
+        <Button
+          onPress={() => navigation.navigate("Register")}
+          containerStyle={styles.button} 
+          type="outline"
+          title="Register" />
       
           {/* <KeyboardAvoidingView behavior="padding" enabled style={Styles.container}>
       </KeyboardAvoidingView> */}
-      </View>
+      <View style={{height:100}} />
+
     </KeyboardAvoidingView>
   )
 }
@@ -73,7 +78,7 @@ const styles = StyleSheet.create({
     alignItems: "center",
     // justify-content: "",
     alignItems: "center",
-    padding: 20, 
+    padding: 10, 
     backgroundColor: "white"
     
   },
