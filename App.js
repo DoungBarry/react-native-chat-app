@@ -8,7 +8,7 @@ import { StyleSheet, Text, View } from "react-native";
 
 import 'react-native-gesture-handler'
 import LoginScreen from "./screens/LoginScreen"
-
+import RegisterScreen from "./screens/RegisterScreen";
 export default function App() {
 
   const Stack = createStackNavigator();
@@ -20,11 +20,12 @@ export default function App() {
   }
     // Here is phone title 
 
-
+        {/* Here is like as setting Routing Page  */}
   return (
     <NavigationContainer>
       <Stack.Navigator screenOptions={globalScreenOption}>
         <Stack.Screen name='Login' component={LoginScreen} />
+        <Stack.Screen name='Register' component={RegisterScreen} />
        </Stack.Navigator>
 </NavigationContainer>
   );
