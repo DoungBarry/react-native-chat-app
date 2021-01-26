@@ -1,6 +1,8 @@
 import React, { useState } from 'react'
 import { Image, Button, Input } from "react-native-elements";
-import {  KeyboardAvoidingView, StyleSheet, Text, View } from "react-native";
+import { KeyboardAvoidingView, StyleSheet, Text, View } from "react-native";
+
+// Join keyboarAvoidingview is keyboard show below , when you click screen //
 
 const LoginScreen = () => { 
 
@@ -9,20 +11,18 @@ const LoginScreen = () => {
   const [password, setPassword]=useState("");
      
 
-  
+
   //tell your input this is useState ! // 
 
 
   return (
     
-    <View >
-      <KeyboardAvoidingView behavior="padding" enabled style={Styles.container}>
+    <View style={Styles.container}>
+      
       <Image
         style={{ width: 200, height: 200 }}
         source={{ uri: "/Users/doung1118/Code/ReactNative/message-chat-native/assets/logo/logo.png" }}
       />
-     
- 
       <Input
         placeholder="Email"
           autoFocus
@@ -43,14 +43,16 @@ const LoginScreen = () => {
           type="email"  
         value={password}
         onChangeText={ (text )=> setPassword(text)}
-        value={password}
-     
+       
       /> 
-    
-      <Button containerStyle={Styles.button} title="Touch me " />
 
-        <Button containerStyle={Styles.button} title="Register" type="outline " />
-        </KeyboardAvoidingView>
+      <Button containerStyle={Styles.button} title="V - up" />
+
+      <Button containerStyle={Styles.button} title="Register" type="outline " />
+      
+          <KeyboardAvoidingView behavior="padding" enabled style={Styles.container}>
+      </KeyboardAvoidingView>
+      
    </View>
   )
 }
@@ -59,13 +61,15 @@ export default LoginScreen
 
 const Styles = StyleSheet.create({  
   container: {
-    flex:0,
-    alignItems:"center" ,
+    flex:1,
+    alignItems: "center",
+    // justify-content: "",
+    alignItems:"center",
   },
 
   button: {
-    width: 200,
-    marginTop:10 , 
+    // width: 200,
+    // marginTop:10 , 
    }
    
 })
